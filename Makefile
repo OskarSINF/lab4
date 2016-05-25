@@ -1,4 +1,4 @@
- all:
+all:
 	g++ *.cpp -std=c++0x -o lab4
 	./lab4 0
 	./lab4 1000000
@@ -6,4 +6,6 @@
 	./lab4 31
 	./lab4 10001
 	./lab4 17
-
+	./lab4 3
+	./lab4 37	
+	./lab4 9

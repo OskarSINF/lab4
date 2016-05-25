@@ -18,9 +18,8 @@ int main(int argc, char const *argv[])
 	int liczba=atoi( argv[1] ),cyfry[6];
 	zakres(liczba);
 	cout<<"#Liczba n= "; 			naSlowa(naCyfry(cyfry,liczba),liczba);
-	cout<<endl<<"##Liczba k= "; 	naSlowa(naCyfry(cyfry,szukajK(liczba)),szukajK(liczba));	
-	cout<<endl<<"###Iloczyn n*k= "; zakres(liczba*szukajK(liczba)); 
-	naSlowa(naCyfry(cyfry,liczba*szukajK(liczba)),liczba*szukajK(liczba));
+	cout<<endl<<"##Liczba k= ";		naSlowa(naCyfry(cyfry,szukajK(liczba)),szukajK(liczba));	
+	cout<<endl<<"###Iloczyn n*k= "; naSlowa(naCyfry(cyfry,liczba*szukajK(liczba)),liczba*szukajK(liczba));
 	cout<<endl;
 	return 0;
 }
@@ -53,9 +52,9 @@ void _3cyfry(int cyfry[],int d,int liczba)
 	
 	if(d!=2&& szerokosc(liczba)>3) 
 	{
-		if(cyfry[3]==1&& cyfry[4]==0) 		cout<<tysiace[0];	
-	 	else if(cyfry[3]>1&& cyfry[3]<5) 	cout<<tysiace[1];	
-	 	else								cout<<tysiace[2];
+		if(cyfry[3]==1&& szerokosc(liczba)==4) 		cout<<tysiace[0];	
+	 	if(cyfry[3]>1&& cyfry[3]<5&& cyfry[4]==0) 	cout<<tysiace[1];	
+	 	else										cout<<tysiace[2];
 	}
 }
 int *naCyfry(int cyfry[],int liczba)
@@ -99,7 +98,10 @@ int szukajK(int n)
 		exit(0);
 	}
 	while(!Czy_zero_jeden(naCyfry(tab,k*n)))
+	{
+		zakres(n*k);
 		k++;
+	}
 
 	return k;
 }

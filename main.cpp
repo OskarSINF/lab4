@@ -53,7 +53,7 @@ void _3cyfry(int cyfry[],int d,int liczba)
 	if(d!=2&& szerokosc(liczba)>3) 
 	{
 		if(cyfry[3]==1&& szerokosc(liczba)==4) 		cout<<tysiace[0];	
-	 	if(cyfry[3]>1&& cyfry[3]<5&& cyfry[4]==0) 	cout<<tysiace[1];	
+	 	else if(cyfry[3]>1&& cyfry[3]<5&& cyfry[4]!=1) 	cout<<tysiace[1];	
 	 	else										cout<<tysiace[2];
 	}
 }
